@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  
+  header {
+    width: 100%;
+    height: 30%;
+    padding: 2em 0;
+    background: url('../assets//images/pattern-bg.png') no-repeat;
+    background-size: 100% 100%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    
+    
+    h1 {
+      margin-bottom: 1em;
+
+      font-family: 'Rubik', sans-serif;
+      font-weight: 500;
+      color: #fff;
+    }
+    form {
+      width: 30%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      
+      input {
+        padding: 1em;
+        background: #fff;
+        
+        flex: 1.8;
+        font-family: 'Rubik', sans-serif;
+        font-size: 18px;
+        
+        border: none;
+        border-radius: .75em 0 0 .75em;
+      }
+      
+      button {
+        height: 100%;
+        flex: .2;
+        background: hsl(0, 0%, 17%);
+        
+        border: none;
+        border-radius: 0 .75em .75em 0;
+      }
+    }
+  }
+  
+  main {
+    position: relative;
+    width: 100%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    
+    
+    .table {
+      position: absolute;
+      top: -6em;
+      right: auto;
+      
+      background: #fff;
+      padding: 2em 0;
+      
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+
+      border-radius: .75em;
+      
+      z-index: 90;
+      width: 50%;
+      height: 125px;
+      
+      .column {
+        height: 100%;
+        padding-left: 2em;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+
+        flex: 1;
+        
+        border-right: solid 1px hsl(0, 0%, 59%);
+        font-family: 'Rubik', sans-serif;
+        
+        
+        
+        h3 {
+          margin-bottom: 1em;
+          font-size: 12px;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          color: hsl(0, 0%, 59%);
+        }
+        span {
+          font-size: 18px;
+          strong {
+            font-weight: 500;
+          }
+        }
+      }
+      .column.four {
+        border-right: none;
+    }
+    }
+    .leaflet-container {
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    }
+  }
+}
