@@ -13,7 +13,7 @@ export function App() {
           IP Address Tracker
         </h1>
         <form>
-          <input placeholder="192.168.1.1" />
+          <input placeholder="Search for any IP address or domain" />
           <button type="submit">
             <img src={arrowIcon} alt="" />
           </button>
