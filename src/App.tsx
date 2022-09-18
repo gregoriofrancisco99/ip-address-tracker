@@ -26,15 +26,17 @@ export function App() {
   async function AskAPI(form:FormEvent) {
     form.preventDefault();
 
-    const url = `https://geo.ipify.org/api/v2/country?apiKey=${apikey}&ipAddress=${IP}`
+    const url = `https://geo.ipify.org/api/v2/country?apiKey=at_m846Jgs38FaHLrJ0dwiFhMtwP1S6S&ipAddress=${IP}`
     
     await fetch(url)
-      .then((res) => res.json())
-      .then((result) => {
+      .then((res) => {
+       const result = res.json();
+       result.then(result => {
         setIpInfo(result);
-        setIP('')
-        console.log(ipInfo);
-    });
+        console.log(result);
+        setIP('');
+      });
+      });
   }
 
  
