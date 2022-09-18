@@ -30,12 +30,14 @@ export function App() {
     
     await fetch(url)
       .then((res) => {
-       const result = res.json();
-       result.then(result => {
-        setIpInfo(result);
-        console.log(result);
-        setIP('');
-      });
+        const result = res.json();
+        result.then(result => {
+          setIpInfo(result);
+          console.log(result);
+          setIP('');
+        });
+      }, (error) => {
+        console.log(error);
       });
   }
 
@@ -68,19 +70,19 @@ export function App() {
           <div className="column second">
             <h3>Location</h3>
             <span>
-              <strong>{ (ipInfo?.location.region || ipInfo?.location.country) ? `${ipInfo.location.region}, ${ipInfo.location.country} `: '---'}</strong>
+              <strong>{ (ipInfo?.location?.region || ipInfo?.location?.country) ? `${ipInfo?.location?.region}, ${ipInfo?.location?.country} `: '---'}</strong>
             </span>
           </div>
           <div className="column three">
             <h3>TimeZone</h3>
             <span>
-              <strong>{ (ipInfo?.location.timezone) ? ipInfo?.location.timezone : '---'}</strong>
+              <strong>{ (ipInfo?.location?.timezone) ? ipInfo?.location?.timezone : '---'}</strong>
             </span>
           </div>
           <div className="column four">
             <h3>ISP</h3>
             <span>
-              <strong>{ (ipInfo?.isp) ? ipInfo.isp : '---'}</strong>
+              <strong>{ (ipInfo?.isp) ? ipInfo?.isp : '---'}</strong>
             </span>
           </div>
         </div>
